@@ -79,11 +79,11 @@ def install_wheels():
     None.
     May raise error if unable to install.
     '''
-    for wheel in dir_path.listdir():
-        if wheel.endwith(".whl"):
+    for wheel in os.listdir(dir_path):
+        if wheel.endswith(".whl"):
             print("Installing "+ wheel +"...")
             try:
-                os.system('python -m pip install '+ wheel)
+                os.system('python -m pip install '+ str(os.path.join(dir_path, wheel)))
                 print("Wheel installed.")
             except Exception as e:
                 print("Unable to install wheel:\n", e)
