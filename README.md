@@ -54,6 +54,4 @@ When using polyglot for parts-of-speech tagging in languages other than english,
 ```
 polyglot download embedding2.pt pos2.pt
 ```
-More information on languages and parts-of-speech tagging can be found in the <a href="https://polyglot.readthedocs.io/en/latest/POS.html" title="https://polyglot.readthedocs.io/en/latest/POS.html">documentation</a> and in the <a href="https://universaldependencies.org/docs/tagset-conversion/index.html" title="https://universaldependencies.org/docs/tagset-conversion/index.html">Universal POS Tables</a>.
-
-The **`install_all_languages.bat`** file installs embeddings2 and pos2 models for all supported languages.
+More information on languages and parts-of-speech tagging can be found in the <a href="https://polyglot.readthedocs.io/en/latest/POS.html" title="https://polyglot.readthedocs.io/en/latest/POS.html">POS Documentation</a>, <a href="https://polyglot.readthedocs.io/en/latest/Download.html" title="https://polyglot.readthedocs.io/en/latest/Download.html">Model Download Documentation</a> and in the <a href="https://universaldependencies.org/docs/tagset-conversion/index.html" title="https://universaldependencies.org/docs/tagset-conversion/index.html">Universal POS Tables</a>.
