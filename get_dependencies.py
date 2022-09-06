@@ -50,30 +50,48 @@ def get_wheels(pyicu_version="2.9", pycld2_version="0.41"):
     try:
         wheel = "PyICU-{pyicu}-cp{v1}-cp{v1}-win{v2}.whl".format(pyicu=pyicu_version,v1=v1,v2=v2)
         response = requests.get(url = "https://download.lfd.uci.edu/pythonlibs/archived/"+wheel)
-        open(os.path.join(dir_path, wheel), "wb").write(response.content).close()
+        open(os.path.join(dir_path, wheel), "wb").write(response.content)
         print("PyICU-{0} downloaded.".format(pyicu_version))
     except Exception as e:
         print("Unable to download PyICU:\n", e)
         raise SystemExit
 
     # pycld2
-    print("Downloading wheel pycld2-{0}").format(pycld2_version)
+    print("Downloading wheel pycld2-{0}".format(pycld2_version))
     try:
         wheel = "pycld2-{pycld2}-cp{v1}-cp{v1}-win{v2}.whl".format(pycld2=pycld2_version,v1=v1,v2=v2)
         response = requests.get(url = "https://download.lfd.uci.edu/pythonlibs/archived/"+wheel)
-        open(os.path.join(dir_path, wheel), "wb").write(response.content).close()
+        open(os.path.join(dir_path, wheel), "wb").write(response.content)
     except Exception as e:
         print("Unable to download pycld2:\n", e)
         raise SystemExit
 
 def install_wheels():
     '''
+    Installs the downloaded wheels.
+
+    Parameters
+    ----------
+    None.
+
+    Returns
+    ----------
+    None.
+    May raise error if unable to install.
     '''
     for wheel in dir_path.listdir():
-        os.system('ls -l')
+        if wheel.endwith(".whl"):
+            print("Installing "+ wheel +"...")
+            try:
+                os.system('python -m pip install '+ wheel)
+                print("Wheel installed.")
+            except Exception as e:
+                print("Unable to install wheel:\n", e)
+                raise SystemExit
 
 #--------------------------------------------------------------------------------
 # Wheels directory
 dir_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "wheels")
+print("Wheels folder:", dir_path)
 get_wheels()
 install_wheels()
