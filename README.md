@@ -10,6 +10,8 @@ Polyglot is a natural language pipeline that supports various languages, built f
 
 With the use of a virtual Linux environment in Windows, it is possible to run the regular installation of polyglot in a WSL virtual machine platform. Installation of the WSL can be done following the <a href="https://docs.microsoft.com/en-us/windows/wsl/install" title="https://docs.microsoft.com/en-us/windows/wsl/install">Microsoft Documentation</a>.
 
+This is a good solution, but may result in slower performance or conflict with running virtual environments in some cases.
+
 * ## **On base Windows**
 
 If trying to install and use polyglot in Windows without the use of a virtual Linux machine, the process is more complex. This repo was created to offer an easy way to do this, by running the **`setup.bat`** file. The steps taken in this installation are as follows:
@@ -41,6 +43,8 @@ With this the package is installed on Windows and can be tested by running in Py
 ```python
 from polyglot.text import Text
 ```
+
+Errors may be the result of failed installation of dependencies or unsupported versions of packages.
 
 ---
 * ## **Installing specific language packs**
