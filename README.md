@@ -18,7 +18,7 @@ If trying to install and use polyglot in Windows without the use of a virtual Li
 
 1. **Download** of depencencies *PyICU*, *pycld2*, *futures* and *Morfessor*. *Morfessor* and *futures* wheels may be unnecessary in some cases. These two are already present in the **wheels/** folder, and are built for all versions of Python 3. *PyICU* and *pycld2* are version-specific according to which minor version of Python 3 you are using and can be accordingly downloaded from this <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" title="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Archive of Python Extension Packages</a>.
    
-    Within the **`get_dependencies.py`** file, which is called by **`setup.bat`** after installing the *requests* package, these wheels are automatically downloaded according to the detected Python version of the interpreter. By manually running this python script, you can input a specific version of each of these wheels for download, instead of downloading the default versions.
+    Within the **`get_dependencies.py`** script, which is called by **`setup.bat`**, these wheels are automatically downloaded according to the detected Python version of the interpreter. By manually running this python script, you can input a specific version of each of these wheels for download, instead of downloading the default versions.
 
 2. **Installaion** of dependencies using
 
