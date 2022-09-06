@@ -47,7 +47,7 @@ from polyglot.text import Text
 Errors may be the result of failed installation of dependencies or unsupported versions of packages.
 
 ---
-* ## **Installing specific language packs**
+* ## **Installing specific language models**
 
 When using polyglot for parts-of-speech tagging in languages other than english, it is necessary to install the respective **embeddings2** and **pos2** models. For example, to use portuguese (pt) parts-of-speech tagging, you need to run in the Command Prompt or Terminal:
 
