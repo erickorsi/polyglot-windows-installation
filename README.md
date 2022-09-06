@@ -20,7 +20,7 @@ If trying to install and use polyglot in Windows without the use of a virtual Li
    
     Within the **`get_dependencies.py`** script, which is called by **`setup.bat`**, these wheels are automatically downloaded according to the detected Python version of the interpreter. By manually running this python script, you can input a specific version of each of these wheels for download, instead of downloading the default versions.
 
-2. **Installaion** of dependencies using
+2. **Installation** of dependencies using
 
    ```
    python -m pip install [path/to/downloaded/wheel.whl]
