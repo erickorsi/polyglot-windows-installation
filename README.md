@@ -2,10 +2,13 @@
 
 Manual steps, explanation and automatic installation of the package "Polyglot" in any version of Python 3 on Windows.
 
+* **To easily install the package in Windows, run the *`setup.bat`* file.**
+
+This can also be done in a virtual environment, of any python 3 version. More information on this installation and its explanation can be seen below. Information on creating  virtual environments can be found on the <a href="https://virtualenv.pypa.io/en/latest/" title="https://virtualenv.pypa.io/en/latest/">Virtualenv Documentation</a>, the <a href="https://docs.python.org/3/library/venv.html" title="https://docs.python.org/3/library/venv.html">Venv Documentation</a>, or the <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#:~:text=With%20conda%2C%20you%20can%20create,also%20share%20an%20environment%20file." title="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#:~:text=With%20conda%2C%20you%20can%20create,also%20share%20an%20environment%20file.">Conda Environments Documentation</a>.
+
 ---
 Polyglot is a natural language pipeline that supports various languages, built for Linux and very useful for natural language processing of texts in non-english languages. The <a href="http://polyglot.readthedocs.org" title="http://polyglot.readthedocs.org">Polyglot Documentation</a> explains how to install it on Linux, by installing its dependencies and running `pip install polyglot` in the terminal. However, as of September 2022, the package is still not stable for Windows OS, requiring either the use of a Windows Subsystem for Linux (WSL) or through various installations of dependencies and setup through the Command Prompt.
 
----
 * ## **Using WSL**
 
 With the use of a virtual Linux environment in Windows, it is possible to run the regular installation of polyglot in a WSL virtual machine platform. Installation of the WSL can be done following the <a href="https://docs.microsoft.com/en-us/windows/wsl/install" title="https://docs.microsoft.com/en-us/windows/wsl/install">Microsoft Documentation</a>.
@@ -14,11 +17,13 @@ This is a good solution, but may result in slower performance or conflict with r
 
 * ## **On base Windows**
 
-If trying to install and use polyglot in Windows without the use of a virtual Linux machine, the process is more complex. This repo was created to offer an easy way to do this, by running the **`setup.bat`** file. The steps taken in this installation are as follows:
+If trying to install and use polyglot in Windows without the use of a virtual Linux machine, the process is more complex. This repo was created to offer an easy way to do this, by running the ***`setup.bat`*** file.
+
+In case you prefer to run the installation step by step, the processa is as follows:
 
 1. **Download** of depencencies *PyICU*, *pycld2*, *futures* and *Morfessor*. *Morfessor* and *futures* wheels may be unnecessary in some cases. These two are already present in the **wheels/** folder, and are built for all versions of Python 3. *PyICU* and *pycld2* are version-specific according to which minor version of Python 3 you are using and can be accordingly downloaded from this <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" title="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Archive of Python Extension Packages</a>.
    
-    Within the **`get_dependencies.py`** script, which is called by **`setup.bat`**, these wheels are automatically downloaded according to the detected Python version of the interpreter. By manually running this python script, you can input a specific version of each of these wheels for download, instead of downloading the default versions.
+    Within the ***`get_dependencies.py`*** script, which is called by ***`setup.bat`***, these wheels are automatically downloaded according to the detected Python version of the interpreter. By changing this python script, you can input a specific version of each of these wheels for download, instead of downloading the default versions.
 
 2. **Installation** of dependencies using
 
@@ -27,7 +32,7 @@ If trying to install and use polyglot in Windows without the use of a virtual Li
    ```
    In some cases, it is possible to simply run `pip install [wheel.whl]` or `pip3 install [wheel.whl]`, though these may not work in all cases.
    
-   This is also automated within the **`get_dependencies.py`** script for each of the four wheels required.
+   This is also automated within the ***`get_dependencies.py`*** script for each of the four wheels required.
 
 3. **Setup** of the polyglot package itself directly from the <a href="https://github.com/aboSamoor/polyglot.git" title="https://github.com/aboSamoor/polyglot.git">GitHub Repo</a>.
    
@@ -36,7 +41,7 @@ If trying to install and use polyglot in Windows without the use of a virtual Li
    cd polyglot
    python setup.py install
    ```
-   This is done automatically within the **`setup.bat`** file. After the setup is finished, the created folder is also removed, because it is no longer necessary.
+   This is done automatically within the ***`setup.bat`*** file. After the setup is finished, the created folder is also removed, because it is no longer necessary.
 
 With this the package is installed on Windows and can be tested by running in Python:
 
