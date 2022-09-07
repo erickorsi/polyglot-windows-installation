@@ -1,6 +1,6 @@
 :: Install dependencies
 echo "Installing dependencies for polyglot..."
-pip3 install -U pip
+python -m pip install -U pip
 pip3 install -U requests
 python get_dependencies.py
 echo "Dependencies installed."
