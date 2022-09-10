@@ -11,3 +11,4 @@ cd polyglot
 python setup.py install
 cd ..
 RMDIR /S /Q %0\..\polyglot
+echo "Polyglot installed. Test the installation with 'from polyglot.text import Text' in python."
